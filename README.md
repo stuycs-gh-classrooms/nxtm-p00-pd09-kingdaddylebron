@@ -2,8 +2,9 @@
 ## Project 00
 ### NeXTCS
 ### Period: 9
-## Name0: 
-## Name1: OTHER NAME HERE (delete this line if you are working solo)
+## Name0: Matthew Ciu
+## Name1: Rafsan Ahmed 
+## Name2: Timothy Louis 
 ---
 
 This project will be completed in phases. The first phase will be to work on this document. Use github-flavoured markdown. (For more markdown help [click here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) )
@@ -26,34 +27,37 @@ All projects will require the following:
 ## Phase 0: Force Selection, Analysis & Plan
 ---------- 
 
-#### Custom Force: NAME OF YOUR FORCE
+#### Custom Force: Wind Force
 
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
 
-YOUR ANSWER HERE
+F = A * P * Cd
+A = Projected area of obj being collided with
+P = Wind pressure 
+Cd = Drag Coefficient 
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
-  - YOUR ANSWER HERE
+  - All of that
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
-  - YOUR ANSWER HERE
+  - Yes, P
 
 - Does this force require any new information to be added to the `Orb` class? If so, what is it and what data type will you use?
-  - YOUR ANSWER HERE
+  - No
 
 - Does this force interact with other `Orbs`, or is it applied based on the environment?
-  - YOUR ANSWER HERE
+  - Applied based on the Environment
 
 - In order to calculate this force, do you need to perform extra intermediary calculations? If so, what?
-  - YOUR ANSWER HERE
+  - Yes, it would have to do extra intermediary calculations. It would have to calculate the wind pressure and the area of the orb, affecting the wind force. 
 
 --- 
 
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
-
+  
 --- 
 
 ### Simulation 2: Spring
