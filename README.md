@@ -57,7 +57,8 @@ Cd = Drag Coefficient
 
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
-  The largest object will act as the center of gravity. Other objects will revolve around it. 
+
+The largest object will act as the center of gravity. Other objects will revolve around it. 
 --- 
 
 ### Simulation 2: Spring
@@ -79,12 +80,12 @@ YOUR ANSWER HERE
 ### Simulation 4: Custom force
 Describe what your Custom force simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+A gust of wind comes in from a specific border, and all orbs are influenced by the wind. If the orb is a paperweight, it could go all the way to the opposing side while a heavier weight might only be pushed slightly out of its existing path. 
 
 --- 
 
 ### Simulation 5: Combination
 Describe what your combination simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+Everything, Everywhere All At Once
 
