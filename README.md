@@ -4,7 +4,7 @@
 ### Period: 9
 ## Name0: Matthew Ciu
 ## Name1: Rafsan Ahmed 
-## Name2: Timothy Louis 
+## Name2: Timothy Louie 
 ---
 
 This project will be completed in phases. The first phase will be to work on this document. Use github-flavoured markdown. (For more markdown help [click here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) )
@@ -57,13 +57,15 @@ Cd = Drag Coefficient
 
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
-  
+  The largest object will act as the center of gravity. Other objects will revolve around it. 
 --- 
 
 ### Simulation 2: Spring
 Describe what your spring simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+Like Super Mario Galaxy with Orbs 
+![image](https://github.com/user-attachments/assets/7eab4738-80c9-4a6f-a085-073444d1cf71)
+
 
 --- 
 
