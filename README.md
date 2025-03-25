@@ -2,9 +2,9 @@
 ## Project 00
 ### NeXTCS
 ### Period: 9
-## Name0: Matthew Ciu
-## Name1: Rafsan Ahmed 
-## Name2: Timothy Louie 
+## Name 0: Matthew Ciu
+## Name 1: Rafsan Ahmed 
+## Name 2: Timothy Louie 
 ---
 
 This project will be completed in phases. The first phase will be to work on this document. Use github-flavoured markdown. (For more markdown help [click here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) )
