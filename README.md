@@ -71,14 +71,14 @@ Like Super Mario Galaxy with Orbs
 ### Simulation 3: Drag
 Describe what your drag simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-Speed of orb decrease as drag increase 😊
+Speed of orb decrease as drag coefficient increases 😊
 
 --- 
 
 ### Simulation 4: Custom force
 Describe what your Custom force simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-A gust of wind comes in from a specific border, and all orbs are influenced by the wind. If the orb is a paperweight, it could go all the way to the opposing side while a heavier weight might only be pushed slightly out of its existing path. 
+A gust of wind comes in from a specific border, and all orbs are influenced by the wind. If the orb is a paperweight, it could go all the way to the opposing side while a heavier orb might only be pushed slightly out of its existing path. 
 
 --- 
 
