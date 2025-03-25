@@ -32,10 +32,10 @@ All projects will require the following:
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
 
-F = A * P * Cd
-A = Projected area of obj being collided with
-P = Wind pressure 
-Cd = Drag Coefficient 
+- F = A * P * Cd
+- A = Projected area of obj being collided with
+- P = Wind pressure 
+- Cd = Drag Coefficient 
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
@@ -64,9 +64,7 @@ The largest object will act as the center of gravity. Other objects will revolve
 ### Simulation 2: Spring
 Describe what your spring simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-Like Super Mario Galaxy with Orbs 
-![image](https://github.com/user-attachments/assets/7eab4738-80c9-4a6f-a085-073444d1cf71)
-
+Like Super Mario Galaxy with Orbs
 
 --- 
 
