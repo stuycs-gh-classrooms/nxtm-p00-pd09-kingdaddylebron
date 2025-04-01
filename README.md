@@ -59,7 +59,8 @@ What is the formula for your force? Including descriptions/definitions for the s
 Describe how you will attempt to simulate orbital motion.
 
 The largest object will act as the center of gravity. Other objects will revolve around it. 
---- 
+
+---
 
 ### Simulation 2: Spring
 Describe what your spring simulation will look like. Explain how it will be setup, and how it should behave while running.
