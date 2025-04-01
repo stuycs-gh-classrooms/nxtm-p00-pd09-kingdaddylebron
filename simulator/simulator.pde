@@ -15,7 +15,7 @@ int GRAVITY = 2;
 int DRAGF = 3;
 int WIND = 4;
 boolean[] toggles = new boolean[4];
-String[] modes = {"Moving", "Bounce", "Gravity", "Drag", "Wind"};
+String[] modes = {"Moving", "Gravity", "Bounce", "Drag", "Wind"};
 
 FixedOrb earth;
 OrbNode o0, o1, o2, o3;
@@ -45,7 +45,11 @@ void draw() {
 
   o0.move(toggles[BOUNCE]);
   o1.move(toggles[BOUNCE]);
-
+  
+  if (toggles[GRAVITY]) simulateGravity();
+  if (toggles[BOUNCE]) simulateSpringForce();
+  if (toggles[DRAGF]) simulateDrag();
+}
 }//draw
 
 
@@ -71,10 +75,10 @@ void windDirection() {
 
 void keyPressed() {
   if (key == ' ') { toggles[MOVING] = !toggles[MOVING]; }
-  if (key == 'g') { toggles[GRAVITY] = !toggles[GRAVITY]; }
-  if (key == 'b') { toggles[BOUNCE] = !toggles[BOUNCE]; }
-  if (key == 'd') { toggles[DRAGF] = !toggles[DRAGF]; }
-  if (key == 'w') { toggles[WIND] = !toggles[WIND]; }
+  if (key == '1') { toggles[GRAVITY] = !toggles[GRAVITY]; }
+  if (key == '2') { toggles[BOUNCE] = !toggles[BOUNCE]; }
+  if (key == '3') { toggles[DRAGF] = !toggles[DRAGF]; }
+  if (key == '4') { toggles[WIND] = !toggles[WIND]; }
     makeOrbs();
   
   if (key == 'up') [ wind == '1'; ]
@@ -98,4 +102,35 @@ void displayMode() {
     text(modes[m], x+2, 2);
     x+= w+5;
   }
+
+void simulateGravity() {
+  for (OrbNode orb = o0; orb != null; orb = orb.next) {
+    PVector gravity = orb.getGravity(earth, G_CONSTANT);
+    orb.applyForce(gravity);
+    orb.move(true);
+    orb.display();
+  }
+}
+
+void simulateSpringForce() {
+  for (OrbNode orb = o0; orb != null; orb = orb.next) {
+    if (orb != earth) {
+      PVector springForce = orb.getSpring(earth, SPRING_LENGTH, SPRING_K);
+      orb.applyForce(springForce);
+    }
+    orb.move(true);
+    orb.display();
+  }
+}
+
+void simulateDrag() {
+  for (OrbNode orb = o0; orb != null; orb = orb.next) {
+    PVector gravity = new PVector(0, 0.5 * orb.mass);
+    PVector dragForce = orb.getDragForce(D_COEF);
+    orb.applyForce(gravity);
+    orb.applyForce(dragForce);
+    orb.move(false);
+    orb.display();
+  }
+}
 }//display
