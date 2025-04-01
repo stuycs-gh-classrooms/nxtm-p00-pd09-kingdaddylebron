@@ -111,6 +111,7 @@ class Orb {
     return ( this.center.dist(other.center)
              <= (this.bsize/2 + other.bsize/2) );
   }//collisionCheck
+  
 
 
   void setColor() {
