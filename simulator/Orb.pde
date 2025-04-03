@@ -43,9 +43,10 @@ class Orb {
   }
 
   PVector getGravity(Orb other, float G) {
-    float r = max(center.dist(other.center), MIN_SIZE);
+    float r = dist(center.x, center.y, other.center.x, other.center.y);
     float strength = G * mass * other.mass / (r * r);
-    PVector force = PVector.sub(other.center, center).mult(strength);
+    PVector force = PVector.sub(other.center, center).normalize();
+    force.mult(strength);
     return force;
   }
 

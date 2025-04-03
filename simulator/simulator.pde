@@ -3,7 +3,7 @@ int MIN_SIZE = 10;
 int MAX_SIZE = 60;
 float MIN_MASS = 10;
 float MAX_MASS = 100;
-float G_CONSTANT = 1;
+float G_CONSTANT = 0.5;
 float D_COEF = 0.1;
 
 int SPRING_LENGTH = 50;
@@ -15,14 +15,14 @@ int GRAVITY = 2;
 int DRAGF = 3;
 int WIND = 4;
 boolean[] toggles = new boolean[5];
-String[] modes = {"Moving", "Gravity", "Bounce", "Drag", "Wind"};
+String[] modes = {"Moving", "Bounce", "Gravity", "Drag", "Wind"};
 
 FixedOrb earth;
 OrbNode o0, o1, o2, o3;
 
 void setup() {
   size(600, 600);
-  earth = new FixedOrb(width/2, height * 2, 1, 20000);
+  earth = new FixedOrb(width/2, height/2, 100, 20000);
   makeOrbs();
 }
 
@@ -42,7 +42,7 @@ void draw() {
   o1.move(toggles[BOUNCE]);
   
   if (toggles[GRAVITY]) simulateGravity();
-  if (toggles[BOUNCE]) simulateSpringForce();
+//  if (toggles[BOUNCE]) simulateSpringForce();
   if (toggles[DRAGF]) simulateDrag();
 }
 
@@ -62,8 +62,8 @@ void makeOrbs() {
 
 void keyPressed() {
   if (key == ' ') toggles[MOVING] = !toggles[MOVING];
-  if (key == '1') toggles[GRAVITY] = !toggles[GRAVITY];
-  if (key == '2') toggles[BOUNCE] = !toggles[BOUNCE];
+  if (key == '1') toggles[BOUNCE] = !toggles[BOUNCE];
+  if (key == '2') toggles[GRAVITY] = !toggles[GRAVITY];
   if (key == '3') toggles[DRAGF] = !toggles[DRAGF];
   if (key == '4') toggles[WIND] = !toggles[WIND];
   makeOrbs();
@@ -90,20 +90,21 @@ void simulateGravity() {
     PVector gravity = orb.getGravity(earth, G_CONSTANT);
     orb.applyForce(gravity);
     orb.move(true);
+    earth.display();
     orb.display();
   }
 }
 
-void simulateSpringForce() {
-  for (OrbNode orb = o0; orb != null; orb = orb.next) {
-    if (orb != earth) {
-      PVector springForce = orb.getSpring(earth, SPRING_LENGTH, SPRING_K);
-      orb.applyForce(springForce);
-    }
-    orb.move(true);
-    orb.display();
-  }
-}
+//void simulateSpringForce() {
+//  for (OrbNode orb = o0; orb != null; orb = orb.next) {
+//    if (orb != earth) {
+//      PVector springForce = orb.getSpring(earth, SPRING_LENGTH, SPRING_K);
+//      orb.applyForce(springForce);
+//    }
+//    orb.move(true);
+//    orb.display();
+//  }
+//}
 
 void simulateDrag() {
   for (OrbNode orb = o0; orb != null; orb = orb.next) {
