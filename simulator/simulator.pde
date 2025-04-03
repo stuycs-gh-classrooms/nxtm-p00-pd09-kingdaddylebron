@@ -7,14 +7,14 @@ float G_CONSTANT = 1;
 float D_COEF = 0.1;
 
 int SPRING_LENGTH = 50;
-float  SPRING_K = 0.005;
+float SPRING_K = 0.005;
 
 int MOVING = 0;
 int BOUNCE = 1;
 int GRAVITY = 2;
 int DRAGF = 3;
 int WIND = 4;
-boolean[] toggles = new boolean[4];
+boolean[] toggles = new boolean[5];
 String[] modes = {"Moving", "Gravity", "Bounce", "Drag", "Wind"};
 
 FixedOrb earth;
@@ -22,16 +22,13 @@ OrbNode o0, o1, o2, o3;
 
 void setup() {
   size(600, 600);
-
-  earth = new FixedOrb(width/2, height * 200, 1, 20000);
+  earth = new FixedOrb(width/2, height * 2, 1, 20000);
   makeOrbs();
-
-}//setup
+}
 
 void draw() {
   background(255);
   displayMode();
-
 
   o0.display();
   o1.display();
@@ -41,8 +38,6 @@ void draw() {
   sf = o1.getSpring(o1.previous, SPRING_LENGTH, SPRING_K);
   o1.applyForce(sf);
   
-  PVector winDirection = 
-
   o0.move(toggles[BOUNCE]);
   o1.move(toggles[BOUNCE]);
   
@@ -50,8 +45,6 @@ void draw() {
   if (toggles[BOUNCE]) simulateSpringForce();
   if (toggles[DRAGF]) simulateDrag();
 }
-}//draw
-
 
 void makeOrbs() {
   o0 = new OrbNode();
@@ -65,25 +58,16 @@ void makeOrbs() {
   o2.previous = o1;
   o2.next = o3;
   o3.previous = o2;
-
-}
-
-void windDirection() {
-  if ( 
-  
 }
 
 void keyPressed() {
-  if (key == ' ') { toggles[MOVING] = !toggles[MOVING]; }
-  if (key == '1') { toggles[GRAVITY] = !toggles[GRAVITY]; }
-  if (key == '2') { toggles[BOUNCE] = !toggles[BOUNCE]; }
-  if (key == '3') { toggles[DRAGF] = !toggles[DRAGF]; }
-  if (key == '4') { toggles[WIND] = !toggles[WIND]; }
-    makeOrbs();
-  
-  if (key == 'up') [ wind == '1'; ]
-  
-}//keyPressed
+  if (key == ' ') toggles[MOVING] = !toggles[MOVING];
+  if (key == '1') toggles[GRAVITY] = !toggles[GRAVITY];
+  if (key == '2') toggles[BOUNCE] = !toggles[BOUNCE];
+  if (key == '3') toggles[DRAGF] = !toggles[DRAGF];
+  if (key == '4') toggles[WIND] = !toggles[WIND];
+  makeOrbs();
+}
 
 void displayMode() {
   textAlign(LEFT, TOP);
@@ -91,17 +75,15 @@ void displayMode() {
   noStroke();
   int x = 0;
 
-  for (int m=0; m<toggles.length; m++) {
-    //set box color
-    if (toggles[m]) { fill(0, 255, 0); }
-    else { fill(255, 0, 0); }
-
+  for (int m = 0; m < toggles.length; m++) {
+    fill(toggles[m] ? color(0, 255, 0) : color(255, 0, 0));
     float w = textWidth(modes[m]);
-    rect(x, 0, w+5, 20);
+    rect(x, 0, w + 5, 20);
     fill(0);
-    text(modes[m], x+2, 2);
-    x+= w+5;
+    text(modes[m], x + 2, 2);
+    x += w + 5;
   }
+}
 
 void simulateGravity() {
   for (OrbNode orb = o0; orb != null; orb = orb.next) {
@@ -133,4 +115,3 @@ void simulateDrag() {
     orb.display();
   }
 }
-}//display
