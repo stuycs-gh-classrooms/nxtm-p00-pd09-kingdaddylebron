@@ -116,3 +116,17 @@ void simulateDrag() {
     orb.display();
   }
 }
+/*
+void simulateWind() {
+  int x1 = mouseX;
+  int y1 = mouseY;
+ 
+ 
+  for (OrbNode orb = o0; orb != null; orb = orb.next) {
+	PVector wind = new PVector();
+	orb.applyForce(wind);
+	orb.move(true);
+	orb.display();
+}
+*/
+
